@@ -1,5 +1,5 @@
 <script>
-    let answertolifetheuniverseandeverything = 42;
+    import answer from './Exercise_child.svelte';
 </script>
   
-<Exercise_child answer={answertolifetheuniverseandeverything} />
+<answer answer={42} />
