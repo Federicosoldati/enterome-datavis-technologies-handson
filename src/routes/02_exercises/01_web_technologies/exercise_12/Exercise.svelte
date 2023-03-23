@@ -8,3 +8,10 @@
 	</button>
 	<!--  -->
 </div>
+
+
+{#if clicked == true}
+  <p>You have clicked the button!</p>
+{:else}
+  <p>You have to click the button!</p>
+{/if}

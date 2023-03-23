@@ -1,5 +1,5 @@
 <script>
-    import answer from './Exercise_child.svelte';
+    import Exercisechild from './Exercise_child.svelte';
 </script>
   
-<answer answer={42} />
+<Exercisechild answer={42} />
