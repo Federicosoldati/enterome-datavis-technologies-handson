@@ -1,6 +1,6 @@
 <script>
 function circum(radius) {
-    return radius*2*3.14;
+    return Math.round(radius*2*3.14).toFixed(2);
   }
 
 const x = 5
