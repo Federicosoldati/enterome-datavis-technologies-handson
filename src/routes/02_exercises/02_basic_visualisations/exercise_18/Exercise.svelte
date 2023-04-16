@@ -19,15 +19,20 @@
 
   function createXAxis(handle) {
     const xAxis = axisBottom(xScale);
-    select(handle).call(xAxis);
+    select(handle).call(xAxis); 
+
+    select(handle)
+      .selectAll("text")
+      .attr("font-size", 16);
 
     select(handle)
       .append("text")
       .attr("x", innerWidth / 2)
-      .attr("y", margin.bottom - 5)
+      .attr("y", margin.bottom - 25)
       .attr("fill", "currentColor")
       .attr("text-anchor", "middle")
-      .text("X Axis");
+      .text("X Axis")
+      .attr("font-size",25);
   }
 </script>
 
