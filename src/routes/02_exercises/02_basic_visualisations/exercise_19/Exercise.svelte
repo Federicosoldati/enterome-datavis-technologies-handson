@@ -38,7 +38,9 @@
   <svg viewBox="0 0 {width} {height}">
     <g transform="translate({margin.left},{margin.top})">
       {#each values as value}
+        <line class="lollipop" x1={xScale(value["x"])} y1={yScale(value["y"])} x2={xScale(value["x"])} y2={yScale(0)} stroke={colorScale(value["category"])} />
         <circle cx={xScale(value["x"])} cy={yScale(value["y"])} r=10 fill={colorScale(value["category"])}/>
+        <text class="valueLabel" x={xScale(value["x"])} y={yScale(value["y"])-15}>{value["y"]}</text>
       {/each}
     </g>
   </svg>
