@@ -43,3 +43,4 @@
     <circle cx={xScale(value)} cy={innerHeight/2} r=10 />
   {/each}
 </svg>
+
