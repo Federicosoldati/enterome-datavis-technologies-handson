@@ -14,11 +14,32 @@
       { x: 7, y: 3, category: "cat3" },
       { x: 9, y: 1, category: "cat2" }
     ];
+
+    // Scales
+    import { scaleLinear } from 'd3-scale';
+    import { scaleOrdinal } from 'd3-scale';
+    import { schemeDark2 } from 'd3-scale-chromatic';
+
+
+    const xScale = scaleLinear()
+        .domain([0, 10])
+        .range([0, innerWidth]);
+
+    const yScale = scaleLinear()
+        .domain([0, 4])
+        .range([innerHeight, 0]);
+    
+    const colorScale = scaleOrdinal()
+      .domain([...new Set(values.map(v => v.category))])
+      .range(schemeDark2);
+    
   </script>
   
   <svg viewBox="0 0 {width} {height}">
     <g transform="translate({margin.left},{margin.top})">
-      <!--  -->
+      {#each values as value}
+        <circle cx={xScale(value["x"])} cy={yScale(value["y"])} r=10 fill={colorScale(value["category"])}/>
+      {/each}
     </g>
   </svg>
   
